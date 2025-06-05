@@ -1,6 +1,6 @@
 
 import "Corelibs/object" 
-import "Bedroom"
+import "outsideApt"
 
 -- this game over screen is to be replaced with the actual starting game scene 
 -- this was mostly for testing 
@@ -15,10 +15,14 @@ function MainMenu:enter()
     self.background:setZIndex(-200)  
     self.background:moveTo(200, 120) 
     self.background:add()
+    
+    
 end
+
+
 
 function MainMenu:update()
     if pd.buttonJustPressed(pd.kButtonA) then 
-        SCENE_MANAGER:enter(Bedroom())
+        SCENE_MANAGER:enter(Apartment())
     end
 end

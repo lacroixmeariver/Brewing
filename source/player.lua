@@ -16,24 +16,35 @@ function Player:init(x, y)
 
 end
 
+function Player:collisionResponse(other)
+    if other:getTag() == 100 and other.targetRoom then
+        print("Switching to room:", other.targetRoom)
+        SCENE_MANAGER:enter(other.targetRoom)
+    end
+    return "overlap"
+end
 
 function Player:update()
 
+    
+    local playerX, playerY = 0, 0
+
     if pd.buttonIsPressed(pd.kButtonUp) then
-        self:moveBy(0, -1 * self.moveSpeed) 
+        playerY -= self.moveSpeed
     end
     if pd.buttonIsPressed(pd.kButtonDown) then
-        self:moveBy(0, 1 * self.moveSpeed) 
+        playerY += self.moveSpeed
     end
     if pd.buttonIsPressed(pd.kButtonLeft) then
-        self:moveBy(-1 * self.moveSpeed, 0) 
+        playerX -= self.moveSpeed
     end
     if pd.buttonIsPressed(pd.kButtonRight) then
-        self:moveBy(1 * self.moveSpeed, 0) 
+        playerX += self.moveSpeed
     end
 
-    local x, y = self:getPosition()
-    print(x, y)
-    
-
+    -- no calls if the player has not moved 
+    if playerX ~= 0 or playerY ~= 0 then
+        self:moveWithCollisions(self.x + playerX, self.y + playerY)
+    end
 end
+
