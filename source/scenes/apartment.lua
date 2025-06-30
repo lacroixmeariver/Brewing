@@ -1,5 +1,5 @@
 import "Corelibs/object" 
-import "Player"
+import "entities/Player"
 import "ExitZone"
 import "OutsideApt"
 
@@ -16,10 +16,16 @@ function Apartment:enter()
     self.background:setZIndex(-100)  
     self.background:moveTo(200, 120) 
     self.background:add()
-    self.player = Player(200,120)
-    self.player:setZIndex(1000)
+    self.player = Player(64,100)
+    --self.player:setZIndex(1000)
     
-    self.exitZone = ExitZone(50, 50, 24, 24, Outside())
+    self.exitZone = ExitZone(64, 75, 30, 40, Outside()) -- x,y, width, height
+    
+
+    
+   
+
+
 end
 
 function Apartment:update()

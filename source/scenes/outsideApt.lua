@@ -1,10 +1,13 @@
 import "Corelibs/object" 
-import "Player"
+import "entities/Player"
 import "Apartment"
 import "ExitZone"
+import "entities/NPC"
+import "entities/DudeOutside"
 
 local pd <const> = playdate
 local gfx <const> = playdate.graphics
+
 
 class("Outside").extends(Room)
 
@@ -17,10 +20,11 @@ function Outside:enter()
     self.background:add()
     self.player = Player(200, 120)
     
-    
-
     self.exitZone = ExitZone(16, 3, 18, 6, Apartment())
+    self.npc = DudeOutside()
+   
 
+    
 
     
 
