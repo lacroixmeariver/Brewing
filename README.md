@@ -29,6 +29,6 @@ Hello! My name is Ingrid - I'm an aspiring game developer based in Washington, a
 ### Can I play it?
 Short answer: Not yet!
 
-Long answer: I really hope so!! I'm aiming to have something working by the end of summer '25
+Long answer: I really hope you can soon. Development has been stalled for me since the Fall '25 semester started back up, but I'm slowly making more developments.
 
-Last updated June 11th, 2025
+Last updated Otober 7th, 2025
